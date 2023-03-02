@@ -67,8 +67,8 @@ mason_lsp.setup_handlers({
 	-- ["rust_analyzer"] = function ()
 	--     require("rust-tools").setup {}
 	-- end
-	["sumneko_lua"] = function()
-		lsp.sumneko_lua.setup({
+	["lua_ls"] = function()
+		lsp.lua_ls.setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 			settings = {
@@ -167,9 +167,12 @@ cmp.setup({
 	experimental = {
 		ghost_text = true,
 	},
-	window = {},
+	window = {
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
+	},
 	mapping = cmp.mapping.preset.insert({
-		["<C-b>"] = cmp.mapping.scroll_docs(-4),
+		["<C-b>"] = cmp.mapping.scroll_docs( -4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
 		["<C-Space>"] = cmp.mapping.complete({}),
 		["<C-e>"] = cmp.mapping.abort(),
@@ -191,8 +194,8 @@ cmp.setup({
 		["<S-Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
-			elseif luasnip.jumpable(-1) then
-				luasnip.jump(-1)
+			elseif luasnip.jumpable( -1) then
+				luasnip.jump( -1)
 			else
 				fallback()
 			end
@@ -227,3 +230,10 @@ cmp.setup.cmdline(":", {
 
 -- FIDGET-CONFIG
 require("fidget").setup({})
+
+require("lsp_signature").setup({
+	bind = true, -- This is mandatory, otherwise border config won't get registered.
+	handler_opts = {
+		border = "rounded",
+	},
+})

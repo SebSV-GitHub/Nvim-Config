@@ -4,7 +4,8 @@ vim.keymap.set("n", "<leader>ww", ":w<CR>") -- Write the changes
 vim.keymap.set("n", "<leader>q", ":q<CR>") -- Quit
 vim.keymap.set("n", "<leader>bn", ":bn<CR>") -- Next buffer
 vim.keymap.set("n", "<leader>bp", ":bp<CR>") -- Previous buffer
-vim.keymap.set("n", "<leader>bc", ":bdelete<CR>") -- Close buffer
+vim.keymap.set("n", "<leader>bcc", ":bdelete<CR>") -- Close buffer
+vim.keymap.set("n", "<leader>bca", ":bufdo bwipeout<CR>") -- Close buffer
 
 -- lsp
 local opts = { noremap = true, silent = true }

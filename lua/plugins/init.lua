@@ -22,6 +22,7 @@ require("packer").startup(function(use)
 			"onsails/lspkind.nvim",
 			"L3MON4D3/LuaSnip", -- READ DOCS
 			"saadparwaiz1/cmp_luasnip",
+			"ray-x/lsp_signature.nvim",
 		},
 	})
 
@@ -29,10 +30,13 @@ require("packer").startup(function(use)
 
 	use("LunarVim/darkplus.nvim")
 
-	use({ "nvim-lualine/lualine.nvim", requires = {
-		"kyazdani42/nvim-web-devicons",
-		"kdheepak/tabline.nvim",
-	} })
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = {
+			"kyazdani42/nvim-web-devicons",
+			"kdheepak/tabline.nvim",
+		}
+	})
 
 	use({
 		"nvim-treesitter/nvim-treesitter",

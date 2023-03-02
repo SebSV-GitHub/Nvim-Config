@@ -19,4 +19,4 @@ vim.g.mapleader = " "
 vim.cmd("language en_US")
 
 vim.cmd("colorscheme darkplus")
-vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
+--vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
