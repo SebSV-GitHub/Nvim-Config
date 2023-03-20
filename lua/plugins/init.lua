@@ -30,13 +30,7 @@ require("packer").startup(function(use)
 
 	use("LunarVim/darkplus.nvim")
 
-	use({
-		"nvim-lualine/lualine.nvim",
-		requires = {
-			"kyazdani42/nvim-web-devicons",
-			"kdheepak/tabline.nvim",
-		}
-	})
+	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
 
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -45,7 +39,7 @@ require("packer").startup(function(use)
 
 	use("lukas-reineke/indent-blankline.nvim") -- READ DOCS
 
-	use("numToStr/Comment.nvim") -- READ DOCS
+	use("numToStr/Comment.nvim")              -- READ DOCS
 
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x", requires = { "nvim-lua/plenary.nvim" } })
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
@@ -63,7 +57,7 @@ end)
 
 require("plugins.icons")
 require("plugins.lsp")
-require("plugins.lualine")
+require("plugins.bufferline")
 require("plugins.treesitter")
 require("plugins.indent")
 require("plugins.telescope")
