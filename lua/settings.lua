@@ -13,6 +13,7 @@ vim.opt.listchars = { tab = "▸ ", space = "·", extends = "→", precedes = "�
 vim.opt.mouse = {}
 vim.opt.guicursor = ""
 vim.opt.undofile = true
+vim.opt.termguicolors = true
 
 vim.g.mapleader = " "
 

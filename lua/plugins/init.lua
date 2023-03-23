@@ -29,8 +29,15 @@ require("packer").startup(function(use)
 	use("folke/neodev.nvim") -- READ DOCS
 
 	use("LunarVim/darkplus.nvim")
+	use({ "morhetz/gruvbox" })
 
-	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
+	use({
+		"nvim-lualine/lualine.nvim",
+	})
+	use({
+		"kdheepak/tabline.nvim",
+		requires = { "hoob3rt/lualine.nvim", "kyazdani42/nvim-web-devicons" },
+	})
 
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -55,9 +62,10 @@ require("packer").startup(function(use)
 	})
 end)
 
-require("plugins.icons")
+-- require("plugins.icons")
 require("plugins.lsp")
-require("plugins.bufferline")
+require("plugins.tabline")
+require("plugins.statusline")
 require("plugins.treesitter")
 require("plugins.indent")
 require("plugins.telescope")
