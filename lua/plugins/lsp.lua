@@ -86,16 +86,8 @@ mason_lsp.setup_handlers({
 			on_attach = on_attach,
 			settings = {
 				json = {
-					schemas = {
-						{
-							fileMatch = { "package.json" },
-							url = "https://json.schemastore.org/package.json",
-						},
-						{
-							fileMatch = { "tsconfig.json" },
-							url = "https://json.schemastore.org/tsconfig.json",
-						},
-					},
+					schemas = require("schemastore").json.schemas(),
+					validate = { enable = true },
 				},
 			},
 		})
@@ -124,9 +116,9 @@ mason_lsp.setup_handlers({
 						"!Split sequence",
 						"!Join sequence",
 					},
-					schemas = {
-						["https://raw.githubusercontent.com/aws/serverless-application-model/main/samtranslator/schema/schema.json"] = "/template.yaml",
-						["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = "/gitlab-ci.yml",
+					schemaStore = {
+						url = "https://www.schemastore.org/api/json/catalog.json",
+						enable = true,
 					},
 				},
 			},
@@ -172,7 +164,7 @@ cmp.setup({
 		documentation = cmp.config.window.bordered(),
 	},
 	mapping = cmp.mapping.preset.insert({
-		["<C-b>"] = cmp.mapping.scroll_docs( -4),
+		["<C-b>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
 		["<C-Space>"] = cmp.mapping.complete({}),
 		["<C-e>"] = cmp.mapping.abort(),
@@ -190,12 +182,11 @@ cmp.setup({
 				fallback()
 			end
 		end, { "i", "s" }),
-
 		["<S-Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
-			elseif luasnip.jumpable( -1) then
-				luasnip.jump( -1)
+			elseif luasnip.jumpable(-1) then
+				luasnip.jump(-1)
 			else
 				fallback()
 			end
@@ -236,5 +227,5 @@ require("lsp_signature").setup({
 	handler_opts = {
 		border = "rounded",
 	},
-	hint_prefix = "🧐 "
+	hint_prefix = "🧐 ",
 })

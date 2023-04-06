@@ -119,11 +119,6 @@ _G.packer_plugins = {
     path = "/Users/sebastiansuarezvalencia/.local/share/nvim/site/pack/packer/start/fidget.nvim",
     url = "https://github.com/j-hui/fidget.nvim"
   },
-  gruvbox = {
-    loaded = true,
-    path = "/Users/sebastiansuarezvalencia/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/morhetz/gruvbox"
-  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/Users/sebastiansuarezvalencia/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
@@ -189,6 +184,11 @@ _G.packer_plugins = {
     path = "/Users/sebastiansuarezvalencia/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-navic"] = {
+    loaded = true,
+    path = "/Users/sebastiansuarezvalencia/.local/share/nvim/site/pack/packer/start/nvim-navic",
+    url = "https://github.com/SmiteshP/nvim-navic"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/sebastiansuarezvalencia/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -199,6 +199,11 @@ _G.packer_plugins = {
     path = "/Users/sebastiansuarezvalencia/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/Users/sebastiansuarezvalencia/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/sebastiansuarezvalencia/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -208,6 +213,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sebastiansuarezvalencia/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["schemastore.nvim"] = {
+    loaded = true,
+    path = "/Users/sebastiansuarezvalencia/.local/share/nvim/site/pack/packer/start/schemastore.nvim",
+    url = "https://github.com/b0o/schemastore.nvim"
   },
   ["tabline.nvim"] = {
     loaded = true,
@@ -223,6 +233,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sebastiansuarezvalencia/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["transparent.nvim"] = {
+    loaded = true,
+    path = "/Users/sebastiansuarezvalencia/.local/share/nvim/site/pack/packer/start/transparent.nvim",
+    url = "https://github.com/xiyaowong/transparent.nvim"
   }
 }
 

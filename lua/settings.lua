@@ -18,6 +18,3 @@ vim.opt.termguicolors = true
 vim.g.mapleader = " "
 
 vim.cmd("language en_US")
-
-vim.cmd("colorscheme darkplus")
---vim.cmd("hi Normal guibg=NONE ctermbg=NONE")

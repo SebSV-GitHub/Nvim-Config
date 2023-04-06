@@ -12,6 +12,8 @@ require("packer").startup(function(use)
 		},
 	})
 
+	use("b0o/schemastore.nvim") -- Adds schema store to jsonls
+
 	use({
 		"hrsh7th/nvim-cmp",
 		requires = {
@@ -29,7 +31,8 @@ require("packer").startup(function(use)
 	use("folke/neodev.nvim") -- READ DOCS
 
 	use("LunarVim/darkplus.nvim")
-	use({ "morhetz/gruvbox" })
+	use("navarasu/onedark.nvim")
+	use("xiyaowong/transparent.nvim")
 
 	use({
 		"nvim-lualine/lualine.nvim",
@@ -37,6 +40,10 @@ require("packer").startup(function(use)
 	use({
 		"kdheepak/tabline.nvim",
 		requires = { "hoob3rt/lualine.nvim", "kyazdani42/nvim-web-devicons" },
+	})
+	use({
+		"SmiteshP/nvim-navic",
+		requires = "neovim/nvim-lspconfig",
 	})
 
 	use({
