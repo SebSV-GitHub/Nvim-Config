@@ -1,56 +1,35 @@
-local opts = { noremap = true, silent = true }
+local nnoremap = function(keys, func, desc)
+	if (desc == nil) then
+		desc = ""
+	end
+	vim.keymap.set("n", keys, func, { noremap = true, silent = true, desc = desc })
+end
 
 -- Custom
-vim.keymap.set("n", "<leader>ex", ":Neotree<CR>") -- Open file explorer
-vim.keymap.set("n", "<leader>ww", ":w<CR>")       -- Write the changes
-vim.keymap.set("n", "<leader>q", ":q<CR>")        -- Quit
-vim.keymap.set("n", "<leader>Q", ":q!<CR>")       -- Quit
+nnoremap("<leader>ww", ":w<CR>", "Write buffer")
+nnoremap("<leader>q", ":q<CR>", "Quit buffer")
+nnoremap("<leader>Q", ":q!<CR>", "Force quit buffer")
+nnoremap("<leader>%", ":source %<CR>", "Source file")
 
--- Buffer movement
-vim.keymap.set("n", "<leader>l", ":bnext<CR>")           -- Previous buffer
-vim.keymap.set("n", "<leader>h", ":bprevious<CR>")       -- Previous buffer
-vim.keymap.set("n", "<leader>bc", ":bdelete<CR>")        -- Close buffer
-vim.keymap.set("n", "<leader>bC", ":bufdo bwipeout<CR>") -- Close buffer
-vim.keymap.set("n", "<leader>gb", ":BufferLinePick<CR>") -- Go to buffer
+--	Buffer movement
+nnoremap("<leader>l", ":bnext<CR>", "Next buffer")
+nnoremap("<leader>h", ":bprevious<CR>", "Previous buffer")
+nnoremap("<leader>bc", ":bdelete<CR>", "Delete buffer")
+nnoremap("<leader>bC", ":bufdo bwipeout <CR>", "Clear buffers")
 
--- Window movement
-vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", opts)
-vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", opts)
-vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", opts)
-vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", opts)
+-- Plugins
+-- LSP
+nnoremap("<leader>e", vim.diagnostic.open_float, "Open error in foat window")
+nnoremap("[d", vim.diagnostic.goto_prev, "Next error")
+nnoremap("]d", vim.diagnostic.goto_next, "Previous error")
+nnoremap("<leader>dl", vim.diagnostic.setloclist, "Open diagnostic list")
 
--- Tab movement
-vim.api.nvim_set_keymap("n", "<leader>T", ":tabnew<CR>", opts)       -- Create new tab
-vim.api.nvim_set_keymap("n", "<leader>th", ":tabprevious<CR>", opts) -- Next tab
-vim.api.nvim_set_keymap("n", "<leader>tl", ":tabnext<CR>", opts)     -- Previous tab
-vim.api.nvim_set_keymap("n", "<leader>tc", ":tabclose<CR>", opts)    -- Close tab
-
-vim.keymap.set("n", "<leader>y", '"*y')                              -- Copy to clipboard
-vim.keymap.set("n", "<leader>Y", '"*Y<CR>')                          -- Copy line to clipboard
-
-vim.keymap.set("n", "<leader>d", '"_d')                              -- Delete into void register
-vim.keymap.set("n", "<leader>D", '"_D<CR>')                          -- Delete line into void register
-
--- lsp
-vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
-vim.keymap.set("n", "<space>dl", vim.diagnostic.setloclist, opts)
+-- nvim-tree
+nnoremap("<leader>ex", ":NvimTreeOpen<CR>", "Open file explorer")
 
 -- Telescope
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>sf", builtin.find_files, {})
-vim.keymap.set("n", "<leader>sg", builtin.live_grep, {})
-vim.keymap.set("n", "<leader>sb", builtin.buffers, {})
-vim.keymap.set("n", "<leader>sh", builtin.help_tags, {})
-
--- Mason keymaps
---toggle_package_expand = "<CR>",
---install_package = "i",
---update_package = "u",
---check_package_version = "c",
---update_all_packages = "U",
---check_outdated_packages = "C",
---uninstall_package = "X",
---cancel_installation = "<C-c>",
---apply_language_filter = "<C-f>",
+nnoremap("<leader>sf", builtin.find_files, "Search files")
+nnoremap("<leader>sg", builtin.live_grep, "Search grep")
+nnoremap("<leader>sb", builtin.buffers, "Search buffers")
+nnoremap("<leader>sh", builtin.help_tags, "Search in tags")
