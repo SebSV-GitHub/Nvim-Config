@@ -12,6 +12,16 @@ require("lazy").setup({
 		build = ":MasonUpdate", -- :MasonUpdate updates registry contents
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim",
+
+		}
+	},
+	{
+		"jose-elias-alvarez/null-ls.nvim",
+		dependencies = {
+			{
+				"jay-babu/mason-null-ls.nvim",
+				event = { "BufReadPre", "BufNewFile" },
+			}
 		}
 	},
 	{ "folke/neodev.nvim",               opts = {} },
@@ -25,7 +35,6 @@ require("lazy").setup({
 			},
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-cmdline",
-			"onsails/lspkind.nvim"
 		}
 	},
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
@@ -47,6 +56,12 @@ require("lazy").setup({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.1",
 		dependencies = { "nvim-lua/plenary.nvim" }
+	},
+	{
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end
 	}
 }, {
 	ui = {

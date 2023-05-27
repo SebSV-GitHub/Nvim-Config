@@ -9,4 +9,19 @@ require("nvim-tree").setup({
 			quit_on_open = true,
 		},
 	},
+	-- renderer = {
+	-- 	icons = {
+	-- 		glyphs = {
+	-- 			git = {
+	-- 				unstaged = "🚧",
+	-- 				staged = "🎯",
+	-- 				unmerged = "",
+	-- 				renamed = "✏️",
+	-- 				untracked = "🕵️",
+	-- 				deleted = "🗑️",
+	-- 				ignored = "🙈",
+	-- 			},
+	-- 		}
+	-- 	}
+	-- }
 })

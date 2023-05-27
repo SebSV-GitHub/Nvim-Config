@@ -7,8 +7,6 @@ cmp.setup({
 			luasnip.lsp_expand(args.body)
 		end,
 	},
-	formatting = {
-	},
 	window = {
 		completion = cmp.config.window.bordered(),
 	},
