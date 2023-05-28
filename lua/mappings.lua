@@ -1,5 +1,5 @@
 local nnoremap = function(keys, func, desc)
-	if (desc == nil) then
+	if desc == nil then
 		desc = ""
 	end
 	vim.keymap.set("n", keys, func, { noremap = true, silent = true, desc = desc })
