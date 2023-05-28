@@ -2,7 +2,8 @@ require("lazy").setup({
 	{
 		"morhetz/gruvbox",
 		"tomasiser/vim-code-dark",
-		"xiyaowong/transparent.nvim"
+		"navarasu/onedark.nvim",
+		"xiyaowong/transparent.nvim",
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -12,8 +13,7 @@ require("lazy").setup({
 		build = ":MasonUpdate", -- :MasonUpdate updates registry contents
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim",
-
-		}
+		},
 	},
 	{
 		"jose-elias-alvarez/null-ls.nvim",
@@ -21,10 +21,10 @@ require("lazy").setup({
 			{
 				"jay-babu/mason-null-ls.nvim",
 				event = { "BufReadPre", "BufNewFile" },
-			}
-		}
+			},
+		},
 	},
-	{ "folke/neodev.nvim",               opts = {} },
+	{ "folke/neodev.nvim", opts = {} },
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = {
@@ -35,15 +35,19 @@ require("lazy").setup({
 			},
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-cmdline",
-		}
+		},
 	},
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = {
-			"kdheepak/tabline.nvim",
-			"arkav/lualine-lsp-progress"
-		}
+			{
+				"akinsho/bufferline.nvim",
+				version = "*",
+				dependencies = "nvim-tree/nvim-web-devicons",
+			},
+			"arkav/lualine-lsp-progress",
+		},
 	},
 	{
 		"nvim-tree/nvim-tree.lua",
@@ -55,14 +59,14 @@ require("lazy").setup({
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.1",
-		dependencies = { "nvim-lua/plenary.nvim" }
+		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	{
 		"numToStr/Comment.nvim",
 		config = function()
 			require("Comment").setup()
-		end
-	}
+		end,
+	},
 }, {
 	ui = {
 		icons = {
@@ -88,12 +92,12 @@ require("lazy").setup({
 				"‒",
 			},
 		},
-	}
+	},
 })
 
+require("plugins.neodev")
 require("plugins.lsp")
 require("plugins.completion")
-require("plugins.neodev")
 require("plugins.mason")
 require("plugins.tree-sitter")
 require("plugins.statusline")
