@@ -13,6 +13,7 @@ require("lazy").setup({
 		build = ":MasonUpdate", -- :MasonUpdate updates registry contents
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim",
+			"b0o/schemastore.nvim",
 		},
 	},
 	{
@@ -95,6 +96,7 @@ require("lazy").setup({
 	},
 })
 
+require("plugins.icons")
 require("plugins.neodev")
 require("plugins.lsp")
 require("plugins.completion")

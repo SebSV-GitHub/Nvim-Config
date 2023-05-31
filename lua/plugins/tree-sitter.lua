@@ -3,6 +3,8 @@ require("nvim-treesitter.configs").setup({
 		"lua",
 		"vim",
 		"vimdoc",
+		"json",
+		"yaml",
 	},
 	auto_install = false,
 	highlight = {
