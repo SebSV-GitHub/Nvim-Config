@@ -10,12 +10,21 @@ nnoremap("<leader>ww", ":w<CR>", "Write buffer")
 nnoremap("<leader>q", ":q<CR>", "Quit buffer")
 nnoremap("<leader>Q", ":q!<CR>", "Force quit buffer")
 nnoremap("<leader>%", ":source %<CR>", "Source file")
+nnoremap("<leader>_d", "\"_d", "Delete in void register")
+nnoremap("<leader>yy", "\"*y", "Copy into system clipboard")
+nnoremap("<leader><leader>", ":nohlsearch<CR>", "Clean search highlight")
 
---	Buffer movement
+-- Buffer movement
 nnoremap("<leader>l", ":bnext<CR>", "Next buffer")
 nnoremap("<leader>h", ":bprevious<CR>", "Previous buffer")
 nnoremap("<leader>bc", ":bdelete<CR>", "Delete buffer")
 nnoremap("<leader>bC", ":bufdo bwipeout <CR>", "Clear buffers")
+
+-- Window movement
+nnoremap("<C-h>", "<C-w><C-h>", "Move to left window")
+nnoremap("<C-j>", "<C-w><C-j>", "Move to bottom window")
+nnoremap("<C-k>", ":bdelete<CR>", "Move to upper window")
+nnoremap("<C-l>", ":bufdo bwipeout <CR>", "Move to right window")
 
 -- Plugins
 -- LSP
