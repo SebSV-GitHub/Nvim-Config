@@ -23,8 +23,8 @@ nnoremap("<leader>bC", ":bufdo bwipeout <CR>", "Clear buffers")
 -- Window movement
 nnoremap("<C-h>", "<C-w><C-h>", "Move to left window")
 nnoremap("<C-j>", "<C-w><C-j>", "Move to bottom window")
-nnoremap("<C-k>", ":bdelete<CR>", "Move to upper window")
-nnoremap("<C-l>", ":bufdo bwipeout <CR>", "Move to right window")
+nnoremap("<C-k>", "<C-w><C-k>", "Move to upper window")
+nnoremap("<C-l>", "<C-w><C-l>", "Move to right window")
 
 -- Plugins
 -- LSP
