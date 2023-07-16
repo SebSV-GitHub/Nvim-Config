@@ -1,11 +1,5 @@
 require("nvim-treesitter.configs").setup({
-	ensure_installed = {
-		"lua",
-		"vim",
-		"vimdoc",
-		"json",
-		"yaml",
-	},
+	ensure_installed = {},
 	auto_install = false,
 	highlight = {
 		enable = true,
