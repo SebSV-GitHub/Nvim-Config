@@ -27,13 +27,9 @@ require("transparent").setup({
 	exclude_groups = {}, -- table: groups you don't want to clear
 })
 
-require("onedark").setup({
-	style = "dark",
+require("vscode").setup({
 	transparent = true,
-	lualine = {
-		transparent = true,
-	},
+	italic_comments = true,
+	disable_nvimtree_bg = true,
 })
-require("onedark").load()
-
-vim.cmd.colorscheme("onedark")
+require("vscode").load()

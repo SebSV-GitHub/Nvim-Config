@@ -1,7 +1,7 @@
 require("lazy").setup({
 	{
 		"morhetz/gruvbox",
-		"tomasiser/vim-code-dark",
+		"Mofiqul/vscode.nvim",
 		"navarasu/onedark.nvim",
 		"xiyaowong/transparent.nvim",
 	},
