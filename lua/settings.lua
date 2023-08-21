@@ -11,6 +11,7 @@ vim.opt.mouse = {} -- Disable mouse usage
 vim.opt.guicursor = "" -- Use block cursor
 vim.opt.undofile = true -- Enable usage of undo after closing file using undofiles
 vim.opt.termguicolors = true -- Use graphic terminal colors
+vim.opt.scrolloff = 10
 
 vim.g.mapleader = " " -- <leader> key
 
