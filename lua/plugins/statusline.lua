@@ -16,21 +16,6 @@ bufferline.setup({
 })
 
 require("lualine").setup({
-	sections = {
-		lualine_c = {
-			{
-				"lsp_progress",
-				spinner_symbols = {
-					"▹▹▹▹▹",
-					"▸▹▹▹▹",
-					"▹▸▹▹▹",
-					"▹▹▸▹▹",
-					"▹▹▹▸▹",
-					"▹▹▹▹▸",
-				},
-			},
-		},
-	},
 	extensions = {
 		"nvim-tree",
 	},

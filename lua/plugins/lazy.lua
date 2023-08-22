@@ -47,7 +47,11 @@ require("lazy").setup({
 				version = "*",
 				dependencies = "nvim-tree/nvim-web-devicons",
 			},
-			"arkav/lualine-lsp-progress",
+			{
+				"j-hui/fidget.nvim",
+				tag = "legacy",
+				event = "LspAttach",
+			},
 		},
 	},
 	{
@@ -104,3 +108,4 @@ require("plugins.mason")
 require("plugins.tree-sitter")
 require("plugins.statusline")
 require("plugins.file-explorer")
+require("plugins.fidget")
