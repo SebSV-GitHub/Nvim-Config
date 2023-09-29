@@ -6,7 +6,7 @@ local nnoremap = function(keys, func, desc)
 end
 
 -- Custom
-nnoremap("<leader>ww", ":w<CR>", "Write buffer")
+nnoremap("<leader>w", ":w<CR>", "Write buffer")
 nnoremap("<leader>q", ":q<CR>", "Quit buffer")
 nnoremap("<leader>Q", ":q!<CR>", "Force quit buffer")
 nnoremap("<leader>%", ":source %<CR>", "Source file")
@@ -17,8 +17,8 @@ nnoremap("<leader><leader>", ":nohlsearch<CR>", "Clean search highlight")
 -- Buffer movement
 nnoremap("<leader>l", ":bnext<CR>", "Next buffer")
 nnoremap("<leader>h", ":bprevious<CR>", "Previous buffer")
-nnoremap("<leader>bc", ":bdelete<CR>", "Delete buffer")
-nnoremap("<leader>bC", ":bufdo bwipeout <CR>", "Clear buffers")
+nnoremap("<leader>x", ":bdelete<CR>", "Delete buffer")
+nnoremap("<leader>X", ":bufdo bwipeout <CR>", "Clear buffers")
 
 -- Window movement
 nnoremap("<C-h>", "<C-w><C-h>", "Move to left window")
