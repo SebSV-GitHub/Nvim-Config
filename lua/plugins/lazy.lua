@@ -72,6 +72,9 @@ require("lazy").setup({
 			require("Comment").setup()
 		end,
 	},
+	{
+		"lewis6991/gitsigns.nvim",
+	},
 }, {
 	ui = {
 		icons = {
@@ -110,3 +113,4 @@ require("plugins.statusline")
 require("plugins.file-explorer")
 require("plugins.fidget")
 require("plugins.telescope")
+require("plugins.git")
