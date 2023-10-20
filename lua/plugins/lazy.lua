@@ -36,6 +36,7 @@ require("lazy").setup({
 			},
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-cmdline",
+			"ray-x/lsp_signature.nvim",
 		},
 	},
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
@@ -114,3 +115,4 @@ require("plugins.file-explorer")
 require("plugins.fidget")
 require("plugins.telescope")
 require("plugins.git")
+require("plugins.signature")

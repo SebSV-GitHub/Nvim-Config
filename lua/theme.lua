@@ -28,7 +28,7 @@ require("transparent").setup({
 })
 
 require("vscode").setup({
-	transparent = true,
+	transparent = false,
 	italic_comments = true,
 	disable_nvimtree_bg = true,
 })
