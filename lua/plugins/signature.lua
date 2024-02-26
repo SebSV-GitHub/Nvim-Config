@@ -1,3 +1,5 @@
-require("lsp_signature").setup({
-	hint_prefix = "👽 ",
-})
+return {
+	"ray-x/lsp_signature.nvim",
+	event = "VeryLazy",
+	config = true,
+}

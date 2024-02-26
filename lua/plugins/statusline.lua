@@ -1,23 +1,33 @@
-local bufferline = require("bufferline")
-
-bufferline.setup({
-	options = {
-		diagnostics = "nvim_lsp",
-		show_buffer_close_icons = false,
-		show_close_icon = false,
-		offsets = {
-			{
-				filetype = "NvimTree",
-				text = "File Explorer",
-				text_align = "center",
-				separator = true,
+return {
+	"nvim-lualine/lualine.nvim",
+	dependencies = {
+		"nvim-tree/nvim-web-devicons",
+		{
+			"akinsho/bufferline.nvim",
+			version = "*",
+			dependencies = "nvim-tree/nvim-web-devicons",
+			opts = {
+				options = {
+					theme = "tokyonight",
+					right_mouse_command = false,
+					left_mouse_command = false,
+					diagnostics = "nvim_lsp",
+					offsets = {
+						{
+							filetype = "NvimTree",
+							text = "File Explorer",
+							text_align = "left",
+							separator = true,
+						},
+					},
+					show_buffer_close_icons = false,
+					show_close_icon = false,
+					separator_style = "slant",
+				},
 			},
 		},
 	},
-})
-
-require("lualine").setup({
-	extensions = {
-		"nvim-tree",
+	opts = {
+		extensions = { "fzf", "lazy", "mason", "nvim-tree" },
 	},
-})
+}

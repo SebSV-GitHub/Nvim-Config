@@ -16,3 +16,5 @@ vim.opt.scrolloff = 10
 vim.g.mapleader = " " -- <leader> key
 
 vim.cmd("language en_US") -- Use English language
+
+vim.cmd.colorscheme("darkplus")

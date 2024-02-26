@@ -1,27 +1,17 @@
--- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- empty setup using defaults
-require("nvim-tree").setup({
-	actions = {
-		open_file = {
-			quit_on_open = true,
+return {
+	"nvim-tree/nvim-tree.lua",
+	version = "*",
+	dependencies = {
+		"nvim-tree/nvim-web-devicons",
+	},
+	opts = {
+		actions = {
+			open_file = {
+				quit_on_open = true,
+			},
 		},
 	},
-	-- renderer = {
-	-- 	icons = {
-	-- 		glyphs = {
-	-- 			git = {
-	-- 				unstaged = "🚧",
-	-- 				staged = "🎯",
-	-- 				unmerged = "",
-	-- 				renamed = "✏️",
-	-- 				untracked = "🕵️",
-	-- 				deleted = "🗑️",
-	-- 				ignored = "🙈",
-	-- 			},
-	-- 		}
-	-- 	}
-	-- }
-})
+}
