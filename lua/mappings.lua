@@ -14,7 +14,7 @@ nnoremap("<leader>y", '"*y', "Copy to clipboard")
 -- Buffer movement
 nnoremap("<leader>h", ":bprevious<CR>", "Previous buffer")
 nnoremap("<leader>l", ":bnext<CR>", "Next buffer")
-nnoremap("<leader>bd", ":bdelete<CR>", "Close buffer")
+nnoremap("<leader>bc", ":bdelete<CR>", "Close buffer")
 -- Window movement
 nnoremap("<C-h>", "<C-w><C-h>", "Move to left window")
 nnoremap("<C-j>", "<C-w><C-j>", "Move to bottom window")
@@ -22,10 +22,10 @@ nnoremap("<C-k>", "<C-w><C-k>", "Move to upper window")
 nnoremap("<C-l>", "<C-w><C-l>", "Move to right window")
 
 -- lspconfig
-nnoremap("n", "<leader>e", vim.diagnostic.open_float)
-nnoremap("n", "[d", vim.diagnostic.goto_prev)
-nnoremap("n", "]d", vim.diagnostic.goto_next)
-nnoremap("n", "<leader>d", vim.diagnostic.setloclist)
+nnoremap("<leader>e", vim.diagnostic.open_float, "Open diagnostics floating window")
+nnoremap("[d", vim.diagnostic.goto_prev, "Previous diagnostic")
+nnoremap("]d", vim.diagnostic.goto_next, "Next diagnostic")
+nnoremap("<leader>d", vim.diagnostic.setloclist)
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
