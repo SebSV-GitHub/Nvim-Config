@@ -8,7 +8,6 @@ return {
 			dependencies = "nvim-tree/nvim-web-devicons",
 			opts = {
 				options = {
-					theme = "tokyonight",
 					right_mouse_command = false,
 					left_mouse_command = false,
 					diagnostics = "nvim_lsp",
@@ -16,7 +15,7 @@ return {
 						{
 							filetype = "NvimTree",
 							text = "File Explorer",
-							text_align = "left",
+							text_align = "center",
 							separator = true,
 						},
 					},
