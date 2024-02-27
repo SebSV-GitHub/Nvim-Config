@@ -45,9 +45,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
 		vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
 		vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-		 vim.keymap.set('n', '<space>f', function()
-      vim.lsp.buf.format { async = true }
-    end, opts)
 	end,
 })
 
@@ -66,6 +63,10 @@ nnoremap("<leader>k", function()
 	vim.lsp.buf.signature_help()
 end, "Toggle signature")
 
+-- Conform
+nnoremap("<leader>f", function()
+	require("conform").format()
+end, "Format")
 
 -- Snippets
 local ls = require("luasnip")

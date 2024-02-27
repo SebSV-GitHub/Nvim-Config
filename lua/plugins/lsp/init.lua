@@ -3,6 +3,7 @@ return {
 	dependencies = {
 		require("plugins.lsp.development"),
 		require("plugins.lsp.mason"),
-		require("plugins.lsp.styling"),
+		require("plugins.lsp.formatting"),
+		require("plugins.lsp.linting"),
 	},
 }
