@@ -37,14 +37,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		-- See `:help vim.lsp.*` for documentation on any of the below functions
 		local opts = { buffer = ev.buf }
 		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-		vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-		vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 		vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-		vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
 		vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
 		vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
-		-- vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 	end,
 })
 
@@ -57,8 +53,10 @@ nnoremap("<leader>sf", telescope_builtin.find_files, "Find files")
 nnoremap("<leader>sg", telescope_builtin.live_grep, "Find text")
 nnoremap("<leader>sb", telescope_builtin.buffers, "Find buffer")
 nnoremap("<leader>sh", telescope_builtin.help_tags, "Find tags")
+nnoremap("gd", telescope_builtin.lsp_definitions, "Definitions")
 nnoremap("gr", telescope_builtin.lsp_references, "References")
 nnoremap("gi", telescope_builtin.lsp_implementations, "Implementations")
+nnoremap("<leader>D", telescope_builtin.lsp_type_definitions, "Type definitions")
 
 -- LSP signature
 nnoremap("<leader>k", function()
