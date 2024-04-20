@@ -8,10 +8,10 @@ return {
 				"selene",
 			},
 			typescript = {
-				"xo",
+				"eslint_d",
 			},
 			typescriptreact = {
-				"xo",
+				"eslint_d",
 			},
 		}
 
